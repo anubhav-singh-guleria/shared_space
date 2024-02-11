@@ -1,6 +1,33 @@
+"use clients"
+
 import { Button } from "@/components/ui/button";
+
 import Image from "next/image";
+
+import { api } from "@/convex/_generated/api";
+import { useOrganization } from "@clerk/nextjs";
+import { useApiMutation } from "@/hooks/use-api-mutation";
+import { toast } from "sonner";
+
+
 export const EmptyBoards = () => {
+
+    const { mutate, pending } = useApiMutation(api.board.create);
+    const { organization } = useOrganization();
+    const onClick = () => {
+        if(!organization) return;
+        
+        mutate({
+            orgId: organization.id,
+            title: "Untitled"
+        })
+        .then( (id) => {
+            toast.success("Board Created");
+        }).catch((error) => {
+            throw error;
+        })
+    }
+
     return (
         <div className="h-full flex flex-col justify-center items-center">
             <Image 
@@ -17,7 +44,7 @@ export const EmptyBoards = () => {
                 Start by creating a board for your organization!
             </p>
 
-            <Button size="lg" className="mt-2">
+            <Button disabled = {pending} onClick = {onClick} size="lg" className="mt-2">
                 Creat Board
             </Button>
         </div>
