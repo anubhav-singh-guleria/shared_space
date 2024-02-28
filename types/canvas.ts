@@ -37,7 +37,7 @@ export type RectangleLayer = {
     height: number
     width: number
     fill: Color
-    valur?: string
+    value?: string
 }
 
 export type EllipseLayer = {
@@ -47,7 +47,7 @@ export type EllipseLayer = {
     height: number
     width: number
     fill: Color
-    valur?: string
+    value?: string
 }
 
 export type PathLayer = {
@@ -58,7 +58,7 @@ export type PathLayer = {
     width: number
     fill: Color
     points: number[][]
-    valur?: string
+    value?: string
 }
 
 export type TextLayer = {
@@ -68,7 +68,7 @@ export type TextLayer = {
     height: number
     width: number
     fill: Color
-    valur?: string
+    value?: string
 }
 
 export type NoteLayer = {
@@ -78,7 +78,7 @@ export type NoteLayer = {
     height: number
     width: number
     fill: Color
-    valur?: string
+    value?: string
 }
 
 export enum Side {
@@ -128,4 +128,4 @@ export enum CanvasMode {
     Pencil,
 };
 
-
+export type Layer = RectangleLayer | EllipseLayer | PathLayer | TextLayer | NoteLayer;
