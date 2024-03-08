@@ -3,7 +3,6 @@
 import { memo } from "react"
 
 import { useOthersConnectionIds } from "@/liveblocks.config"
-import { connected } from "process";
 import { Cursor } from "./cursor";
 
 const Cursors = () => {
