@@ -17,7 +17,7 @@ const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL!;
 
 const convex = new ConvexReactClient(convexUrl); // instance of a new client
 
-export const ConvecClientProvider = ({
+export const ConvexClientProvider = ({
     children
 }: ConvexClientProviderProps) => {
     return (
