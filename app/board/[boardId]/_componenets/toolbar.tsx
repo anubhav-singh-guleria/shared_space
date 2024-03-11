@@ -12,7 +12,7 @@ interface ToolBarProps {
     canRedo: boolean
 };
 
-export const ToolBar = ({
+export const Toolbar = ({
     canvasState,
     setCanvasState,
     undo,
